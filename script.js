@@ -27,6 +27,21 @@ resetBtn.addEventListener("click", function () {
   init();
 });
 
+/* Reset to init */
+const init = function () {
+  billAmount.textContent = 0;
+  billAmount.value = "";
+  noOfPeople.textContent = 0;
+  noOfPeople.value = "";
+  tipCustom.value = "";
+  tipPerson.textContent = "0.00";
+  totalPerson.textContent = "0.00";
+  dollarSignTip.textContent = "$";
+  dollarSignTotal.textContent = "$";
+  peopleWarning.classList.add("display-none");
+};
+
+/* Currency exchange */
 const convertPoundToDollar = function () {
   const convertTipEuro = tipPerson.textContent * 1.174949;
   const tipEuro = convertTipEuro.toFixed(2);
@@ -78,19 +93,7 @@ const convertEuroToDollar = function () {
   totalPerson.textContent = totalEuro;
 };
 
-const init = function () {
-  billAmount.textContent = 0;
-  billAmount.value = "";
-  noOfPeople.textContent = 0;
-  noOfPeople.value = "";
-  tipCustom.value = "";
-  tipPerson.textContent = "0.00";
-  totalPerson.textContent = "0.00";
-  dollarSignTip.textContent = "$";
-  dollarSignTotal.textContent = "$";
-  peopleWarning.classList.add("display-none");
-};
-
+/* Bill and people inputs */
 billAmount.addEventListener("keyup", function () {
   if (noOfPeople.value == 0) {
     totalPerson.textContent = "0.00";
@@ -197,6 +200,7 @@ tipCustom.addEventListener("keyup", function () {
   }
 });
 
+/* Currency exchange buttons */
 dollarSymbol.addEventListener("click", function () {
   dollarSignTip.textContent = "$";
   dollarSignTotal.textContent = "$";
