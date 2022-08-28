@@ -28,10 +28,10 @@ resetBtn.addEventListener("click", function () {
 });
 
 const convertToEuro = function () {
-  const convertTipEuro = tipPerson.textContent * 1.17;
+  const convertTipEuro = tipPerson.textContent * 1.1735;
   const tipEuro = convertTipEuro.toFixed(0);
   tipPerson.textContent = tipEuro;
-  const convertTotalEuro = totalPerson.textContent * 1.17;
+  const convertTotalEuro = totalPerson.textContent * 1.1735;
   const totalEuro = convertTotalEuro.toFixed(0);
   totalPerson.textContent = totalEuro;
 };
