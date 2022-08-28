@@ -368,6 +368,16 @@ input {
   color: var(--clr-neutral-600);
 }
 
+.currency-selector button:hover {
+  background-color: var(--clr-neutral-300);
+  color: var(--clr-neutral-600);
+}
+
+.currency-selector button:focus {
+  background-color: var(--clr-neutral-450);
+  color: var(--clr-neutral-600);
+}
+
 .btn-tip:focus {
   background-color: var(--clr-primary-100);
   color: var(--clr-neutral-600);
@@ -512,6 +522,7 @@ input {
     justify-content: center;
     padding-block: 2rem;
     border-radius: 10px;
+    row-gap: 1rem;
   }
 }
 
@@ -533,7 +544,7 @@ input {
 @media (min-width: 50em) {
   .total-sum-up {
     padding-top: 0.5rem;
-    padding-bottom: 3.5rem;
+    /* padding-bottom: 3.5rem; */
   }
 }
 
@@ -560,12 +571,12 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 1.5rem;
+  /* padding-top: 1.5rem; */
 }
 
 @media (max-width: 50em) {
   .reset-btn {
-    padding-top: 2rem;
+    /* padding-top: 2rem; */
   }
 }
 
@@ -615,4 +626,24 @@ input {
 header img {
   width: 90%;
   height: auto;
+}
+
+.currency-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.currency-selector button {
+  border: none;
+  background-color: var(--clr-primary-100);
+  padding-block: 0.35rem;
+  padding-inline: 2rem;
+  border-radius: 5px;
+  transition: 0.25s;
+  font-size: var(--fs-button);
+  color: var(--clr-neutral-100);
+  font-weight: var(--fw-bold);
+  cursor: pointer;
 }
