@@ -590,12 +590,6 @@ input {
   /* padding-top: 1.5rem; */
 }
 
-@media (max-width: 50em) {
-  .reset-btn {
-    /* padding-top: 2rem; */
-  }
-}
-
 .reset {
   color: var(--clr-neutral-600);
   font-size: var(--fs-reset);
@@ -674,6 +668,10 @@ header img {
 
 .span-container {
   display: flex;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 70%;
 }
 
 .dollar-sign-total,

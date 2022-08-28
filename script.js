@@ -94,19 +94,29 @@ const convertEuroToDollar = function () {
 };
 
 /* Bill and people inputs */
+const summaryBill = function (tipBillPersonCalc) {
+  const tipPersonFixed = tipBillPersonCalc.toFixed(2);
+  tipPerson.textContent = tipPersonFixed;
+  const totalCalc = billAmount.value / noOfPeople.value + tipBillPersonCalc;
+  const totalFixedCalc = totalCalc.toFixed(2);
+  totalPerson.textContent = totalFixedCalc;
+};
+
+const summaryElse = function (totalBillPersonCalc) {
+  const totalFixed = totalBillPersonCalc.toFixed(2);
+  totalPerson.textContent = totalFixed;
+};
+
 billAmount.addEventListener("keyup", function () {
   if (noOfPeople.value == 0) {
     totalPerson.textContent = "0.00";
   } else if (noOfPeople.value !== 0 || tipCustom.value !== 0) {
-    tipPersonCalc =
+    const tipBillPersonCalc =
       (billAmount.value / noOfPeople.value) * (tipCustom.value * 0.01);
-    tipPerson.textContent = tipPersonCalc;
-    totalCalc = billAmount.value / noOfPeople.value + tipPersonCalc;
-    totalPerson.textContent = totalCalc;
+    summaryBill(tipBillPersonCalc);
   } else {
-    totalPersonCalc = billAmount.value / noOfPeople.value;
-    totalFixed = totalPersonCalc.toFixed(2);
-    totalPerson.textContent = "$" + totalFixed;
+    const totalBillPersonCalc = billAmount.value / noOfPeople.value;
+    summaryElse(totalBillPersonCalc);
   }
 
   console.log(noOfPeople.value);
@@ -117,30 +127,33 @@ noOfPeople.addEventListener("keyup", function () {
     totalPerson.textContent = "0.00";
     peopleWarning.classList.remove("display-none");
   } else if (noOfPeople.value !== 0 || tipCustom.value !== 0) {
-    tipPersonCalc =
+    const tipBillPersonCalc =
       (billAmount.value / noOfPeople.value) * (tipCustom.value * 0.01);
-    tipPerson.textContent = tipPersonCalc;
-    totalCalc = billAmount.value / noOfPeople.value + tipPersonCalc;
-    totalPerson.textContent = totalCalc;
+    summaryBill(tipBillPersonCalc);
     peopleWarning.classList.add("display-none");
   } else {
-    totalPersonCalc = billAmount.value / noOfPeople.value;
-    totalFixed = totalPersonCalc.toFixed(2);
-    totalPerson.textContent = totalFixed;
+    const totalBillPersonCalc = billAmount.value / noOfPeople.value;
+    summaryElse(totalBillPersonCalc);
   }
 
   console.log(noOfPeople.value);
 });
+
+const tipCalcEnd = function (tipPersonCalc) {
+  const tipFixedCalc = tipPersonCalc.toFixed(2);
+  tipPerson.textContent = tipFixedCalc;
+  const totalCalc = billAmount.value / noOfPeople.value + tipPersonCalc;
+  const totalFixedCalc = totalCalc.toFixed(2);
+  totalPerson.textContent = totalFixedCalc;
+};
 
 /* Tip values */
 tip5.addEventListener("click", function () {
   if (noOfPeople.value == 0 || billAmount.value == 0) {
     totalPerson.textContent = "0.00";
   } else {
-    tipPersonCalc = (billAmount.value / noOfPeople.value) * 0.05;
-    tipPerson.textContent = tipPersonCalc;
-    totalCalc = billAmount.value / noOfPeople.value + tipPersonCalc;
-    totalPerson.textContent = totalCalc;
+    const tipPersonCalc = (billAmount.value / noOfPeople.value) * 0.05;
+    tipCalcEnd(tipPersonCalc);
   }
 });
 
@@ -148,10 +161,8 @@ tip10.addEventListener("click", function () {
   if (noOfPeople.value == 0 || billAmount.value == 0) {
     totalPerson.textContent = "0.00";
   } else {
-    tipPersonCalc = (billAmount.value / noOfPeople.value) * 0.1;
-    tipPerson.textContent = tipPersonCalc;
-    totalCalc = billAmount.value / noOfPeople.value + tipPersonCalc;
-    totalPerson.textContent = totalCalc;
+    const tipPersonCalc = (billAmount.value / noOfPeople.value) * 0.1;
+    tipCalcEnd(tipPersonCalc);
   }
 });
 
@@ -159,10 +170,8 @@ tip15.addEventListener("click", function () {
   if (noOfPeople.value == 0 || billAmount.value == 0) {
     totalPerson.textContent = "0.00";
   } else {
-    tipPersonCalc = (billAmount.value / noOfPeople.value) * 0.15;
-    tipPerson.textContent = tipPersonCalc;
-    totalCalc = billAmount.value / noOfPeople.value + tipPersonCalc;
-    totalPerson.textContent = totalCalc;
+    const tipPersonCalc = (billAmount.value / noOfPeople.value) * 0.15;
+    tipCalcEnd(tipPersonCalc);
   }
 });
 
@@ -170,10 +179,8 @@ tip25.addEventListener("click", function () {
   if (noOfPeople.value == 0 || billAmount.value == 0) {
     totalPerson.textContent = "0.00";
   } else {
-    tipPersonCalc = (billAmount.value / noOfPeople.value) * 0.25;
-    tipPerson.textContent = tipPersonCalc;
-    totalCalc = billAmount.value / noOfPeople.value + tipPersonCalc;
-    totalPerson.textContent = totalCalc;
+    const tipPersonCalc = (billAmount.value / noOfPeople.value) * 0.25;
+    tipCalcEnd(tipPersonCalc);
   }
 });
 
@@ -181,10 +188,8 @@ tip50.addEventListener("click", function () {
   if (noOfPeople.value == 0 || billAmount.value == 0) {
     totalPerson.textContent = "0.00";
   } else {
-    tipPersonCalc = (billAmount.value / noOfPeople.value) * 0.5;
-    tipPerson.textContent = tipPersonCalc;
-    totalCalc = billAmount.value / noOfPeople.value + tipPersonCalc;
-    totalPerson.textContent = totalCalc;
+    const tipPersonCalc = (billAmount.value / noOfPeople.value) * 0.5;
+    tipCalcEnd(tipPersonCalc);
   }
 });
 
@@ -192,11 +197,9 @@ tipCustom.addEventListener("keyup", function () {
   if (noOfPeople.value == 0 || billAmount.value == 0) {
     totalPerson.textContent = "0.00";
   } else {
-    tipPersonCalc =
+    const tipPersonCalc =
       (billAmount.value / noOfPeople.value) * (tipCustom.value * 0.01);
-    tipPerson.textContent = tipPersonCalc;
-    totalCalc = billAmount.value / noOfPeople.value + tipPersonCalc;
-    totalPerson.textContent = totalCalc;
+    tipCalcEnd(tipPersonCalc);
   }
 });
 
