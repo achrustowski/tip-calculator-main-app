@@ -27,20 +27,54 @@ resetBtn.addEventListener("click", function () {
   init();
 });
 
-const convertToEuro = function () {
-  const convertTipEuro = tipPerson.textContent * 1.1735;
-  const tipEuro = convertTipEuro.toFixed(0);
+const convertPoundToDollar = function () {
+  const convertTipEuro = tipPerson.textContent * 1.174949;
+  const tipEuro = convertTipEuro.toFixed(2);
   tipPerson.textContent = tipEuro;
-  const convertTotalEuro = totalPerson.textContent * 1.1735;
-  const totalEuro = convertTotalEuro.toFixed(0);
+  const convertTotalEuro = totalPerson.textContent * 1.174949;
+  const totalEuro = convertTotalEuro.toFixed(2);
   totalPerson.textContent = totalEuro;
 };
-const convertToPound = function () {
-  const convertTipEuro = tipPerson.textContent * 0.85;
-  const tipEuro = convertTipEuro.toFixed(0);
+const convertDollarToPound = function () {
+  const convertTipEuro = tipPerson.textContent * 0.8511001;
+  const tipEuro = convertTipEuro.toFixed(2);
   tipPerson.textContent = tipEuro;
-  const convertTotalEuro = totalPerson.textContent * 0.85;
-  const totalEuro = convertTotalEuro.toFixed(0);
+  const convertTotalEuro = totalPerson.textContent * 0.8511001;
+  const totalEuro = convertTotalEuro.toFixed(2);
+  totalPerson.textContent = totalEuro;
+};
+
+const convertPoundToEuro = function () {
+  const convertTipEuro = tipPerson.textContent * 1.17900257;
+  const tipEuro = convertTipEuro.toFixed(2);
+  tipPerson.textContent = tipEuro;
+  const convertTotalEuro = totalPerson.textContent * 1.17900257;
+  const totalEuro = convertTotalEuro.toFixed(2);
+  totalPerson.textContent = totalEuro;
+};
+const convertEuroToPound = function () {
+  const convertTipEuro = tipPerson.textContent * 0.8481212496;
+  const tipEuro = convertTipEuro.toFixed(2);
+  tipPerson.textContent = tipEuro;
+  const convertTotalEuro = totalPerson.textContent * 0.8481212496;
+  const totalEuro = convertTotalEuro.toFixed(2);
+  totalPerson.textContent = totalEuro;
+};
+
+const convertDollarToEuro = function () {
+  const convertTipEuro = tipPerson.textContent * 1.00345;
+  const tipEuro = convertTipEuro.toFixed(2);
+  tipPerson.textContent = tipEuro;
+  const convertTotalEuro = totalPerson.textContent * 1.00345;
+  const totalEuro = convertTotalEuro.toFixed(2);
+  totalPerson.textContent = totalEuro;
+};
+const convertEuroToDollar = function () {
+  const convertTipEuro = tipPerson.textContent * 0.9965;
+  const tipEuro = convertTipEuro.toFixed(2);
+  tipPerson.textContent = tipEuro;
+  const convertTotalEuro = totalPerson.textContent * 0.9965;
+  const totalEuro = convertTotalEuro.toFixed(2);
   totalPerson.textContent = totalEuro;
 };
 
@@ -168,7 +202,11 @@ dollarSymbol.addEventListener("click", function () {
   dollarSignTotal.textContent = "$";
 
   if (dollarSignTip.classList.contains("currency-pound")) {
-    convertToEuro();
+    convertPoundToDollar();
+  }
+
+  if (dollarSignTip.classList.contains("currency-euro")) {
+    convertEuroToDollar();
   }
 
   dollarSignTip.classList.add("currency-dollar");
@@ -183,11 +221,12 @@ poundSymbol.addEventListener("click", function () {
   dollarSignTip.textContent = "£";
   dollarSignTotal.textContent = "£";
 
-  if (
-    dollarSignTip.classList.contains("currency-euro") ||
-    dollarSignTip.classList.contains("currency-dollar")
-  ) {
-    convertToPound();
+  if (dollarSignTip.classList.contains("currency-dollar")) {
+    convertDollarToPound();
+  }
+
+  if (dollarSignTip.classList.contains("currency-euro")) {
+    convertEuroToPound();
   }
 
   dollarSignTip.classList.add("currency-pound");
@@ -202,8 +241,12 @@ euroSymbol.addEventListener("click", function () {
   dollarSignTip.textContent = "€";
   dollarSignTotal.textContent = "€";
 
+  if (dollarSignTip.classList.contains("currency-dollar")) {
+    convertDollarToEuro();
+  }
+
   if (dollarSignTip.classList.contains("currency-pound")) {
-    convertToEuro();
+    convertPoundToEuro();
   }
 
   dollarSignTip.classList.add("currency-euro");
