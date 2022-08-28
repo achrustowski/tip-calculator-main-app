@@ -207,6 +207,20 @@ input[type="number"] {
   background-repeat: no-repeat;
 }
 
+.bg-img-euro {
+  background-image: url(./images/euro-currency-symbol-svgrepo-com.svg);
+  background-position: 5% 50%;
+  background-size: 3.5%;
+  background-repeat: no-repeat;
+}
+
+.bg-img-pound {
+  background-image: url(./images/pound-symbol-variant-svgrepo-com.svg);
+  background-position: 5% 50%;
+  background-size: 3.5%;
+  background-repeat: no-repeat;
+}
+
 .bg-img-person {
   background-image: url(./images/icon-person.svg);
   background-position: 5% 50%;
@@ -369,13 +383,15 @@ input {
 }
 
 .currency-selector button:hover {
-  background-color: var(--clr-neutral-300);
+  background-color: var(--clr-primary-100);
   color: var(--clr-neutral-600);
+  opacity: 1;
 }
 
 .currency-selector button:focus {
   background-color: var(--clr-neutral-450);
   color: var(--clr-neutral-600);
+  opacity: 1;
 }
 
 .btn-tip:focus {
@@ -632,18 +648,35 @@ header img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 50%;
+  width: 80%;
+}
+
+@media (max-width: 50em) {
+  .currency-selector {
+    width: 85%;
+  }
 }
 
 .currency-selector button {
   border: none;
+  color: var(--clr-neutral-600);
+  font-size: var(--fs-reset);
+  border: none;
   background-color: var(--clr-primary-100);
+  opacity: 0.2;
   padding-block: 0.35rem;
   padding-inline: 2rem;
   border-radius: 5px;
   transition: 0.25s;
-  font-size: var(--fs-button);
-  color: var(--clr-neutral-100);
   font-weight: var(--fw-bold);
   cursor: pointer;
+}
+
+.span-container {
+  display: flex;
+}
+
+.dollar-sign-total,
+.dollar-sign-tip {
+  text-align: right;
 }
