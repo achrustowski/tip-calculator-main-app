@@ -375,6 +375,7 @@ input {
 
 /* Custom tip input */
 #tip-amount {
+  font-size: var(--fs-input);
   text-align: right;
   border-radius: 5px;
   transition: 0.25s;
@@ -416,6 +417,12 @@ input {
 #bill-total::placeholder,
 #people-number::placeholder {
   color: var(--clr-neutral-400);
+  /* padding-left: 2rem; */
+}
+
+#tip-person,
+#total-person {
+  max-width: 10ch;
 }
 
 /* Flex container */

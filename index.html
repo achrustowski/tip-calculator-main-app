@@ -49,11 +49,41 @@
               <section>
                 <h2 class="fs-title-calc clr-neutral-500">Select Tip %</h2>
                 <fieldset class="tip-selection">
-                  <input type="button" name="tip" value="5%" class="btn-tip" />
-                  <input type="button" name="tip" value="10%" class="btn-tip" />
-                  <input type="button" name="tip" value="15%" class="btn-tip" />
-                  <input type="button" name="tip" value="25%" class="btn-tip" />
-                  <input type="button" name="tip" value="50%" class="btn-tip" />
+                  <input
+                    type="button"
+                    name="tip"
+                    value="5%"
+                    class="btn-tip"
+                    id="tip-5"
+                  />
+                  <input
+                    type="button"
+                    name="tip"
+                    value="10%"
+                    class="btn-tip"
+                    id="tip-10"
+                  />
+                  <input
+                    type="button"
+                    name="tip"
+                    value="15%"
+                    class="btn-tip"
+                    id="tip-15"
+                  />
+                  <input
+                    type="button"
+                    name="tip"
+                    value="25%"
+                    class="btn-tip"
+                    id="tip-25"
+                  />
+                  <input
+                    type="button"
+                    name="tip"
+                    value="50%"
+                    class="btn-tip"
+                    id="tip-50"
+                  />
                   <input
                     type="number"
                     id="tip-amount"
@@ -92,23 +122,28 @@
                     <h2 class="fs-title-sum clr-neutral-100">Tip Amount</h2>
                     <h3 class="fs-subject clr-neutral-400">/ person</h3>
                   </div>
-                  <p class="fs-total clr-primary-100">$0.00</p>
+                  <p class="fs-total clr-primary-100" id="tip-person">$0.00</p>
                 </section>
                 <section>
                   <div class="total-person">
                     <h2 class="fs-title-sum clr-neutral-100">Total</h2>
                     <h3 class="fs-subject clr-neutral-400">/ person</h3>
                   </div>
-                  <p class="fs-total clr-primary-100">$0.00</p>
+                  <p class="fs-total clr-primary-100" id="total-person">
+                    $0.00
+                  </p>
                 </section>
               </div>
               <div class="reset-btn">
-                <button class="reset padding-block-100">Reset</button>
+                <button class="reset padding-block-100" id="reset-btn">
+                  Reset
+                </button>
               </div>
             </div>
           </div>
         </main>
       </div>
     </div>
+    <script src="./script.js"></script>
   </body>
 </html>
