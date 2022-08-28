@@ -43,7 +43,8 @@
                   id="bill-total"
                   min="0"
                   oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                  maxlength="20"
+                  maxlength="15"
+                  pattern="[0-9]"
                   placeholder="0"
                   class="fs-input bg-img-dollar padding-inline-200"
                 />
@@ -112,7 +113,8 @@
                   type="number"
                   id="people-number"
                   oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                  maxlength="20"
+                  maxlength="15"
+                  pattern="[0-9]"
                   placeholder="0"
                   class="fs-input bg-img-person padding-inline-200"
                 />
