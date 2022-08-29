@@ -5,12 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
 
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
     <title>Frontend Mentor | Tip calculator app</title>
 
@@ -24,19 +19,20 @@
 
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="bg-clr-neutral-300">
+  <body class="body bg-clr-neutral-300">
     <div class="wrapper">
       <div class="container">
         <header>
           <img src="./images/logo.svg" alt="SPLITTER" />
+          <button class="dark-mode-btn bg-clr-neutral-450 clr-neutral-300" id="dark-mode-btn">
+            Light mode
+          </button>
         </header>
         <main>
-          <div
-            class="element-flex bg-clr-neutral-100 padding-block-400 padding-inline-400"
-          >
+          <div class="element-flex bg-clr-neutral-100 padding-block-400 padding-inline-400">
             <div class="flex-container-left padding-block-200">
               <section>
-                <h2 class="fs-title-calc clr-neutral-500">Bill</h2>
+                <h2 class="bill-title fs-title-calc clr-neutral-500">Bill</h2>
                 <label for="bill-total">Bill</label>
                 <input
                   type="number"
@@ -46,47 +42,17 @@
                   maxlength="15"
                   pattern="[0-9]"
                   placeholder="0"
-                  class="fs-input bg-img-dollar padding-inline-200"
+                  class="fs-input bg-img-dollar padding-inline-200 bg-clr-neutral-200 clr-neutral-600"
                 />
               </section>
               <section>
-                <h2 class="fs-title-calc clr-neutral-500">Select Tip %</h2>
+                <h2 class="tip-title fs-title-calc clr-neutral-500">Select Tip %</h2>
                 <fieldset class="tip-selection">
-                  <input
-                    type="button"
-                    name="tip"
-                    value="5%"
-                    class="btn-tip"
-                    id="tip-5"
-                  />
-                  <input
-                    type="button"
-                    name="tip"
-                    value="10%"
-                    class="btn-tip"
-                    id="tip-10"
-                  />
-                  <input
-                    type="button"
-                    name="tip"
-                    value="15%"
-                    class="btn-tip"
-                    id="tip-15"
-                  />
-                  <input
-                    type="button"
-                    name="tip"
-                    value="25%"
-                    class="btn-tip"
-                    id="tip-25"
-                  />
-                  <input
-                    type="button"
-                    name="tip"
-                    value="50%"
-                    class="btn-tip"
-                    id="tip-50"
-                  />
+                  <input type="button" name="tip" value="5%" class="btn-tip" id="tip-5" />
+                  <input type="button" name="tip" value="10%" class="btn-tip" id="tip-10" />
+                  <input type="button" name="tip" value="15%" class="btn-tip" id="tip-15" />
+                  <input type="button" name="tip" value="25%" class="btn-tip" id="tip-25" />
+                  <input type="button" name="tip" value="50%" class="btn-tip" id="tip-50" />
                   <input
                     type="number"
                     id="tip-amount"
@@ -94,17 +60,14 @@
                     max="100"
                     step="1"
                     placeholder="Custom"
+                    class="bg-clr-neutral-200 clr-neutral-600"
                   />
                 </fieldset>
               </section>
               <section>
                 <div class="input-heading">
-                  <h2 class="fs-title-calc clr-neutral-500">
-                    Number of People
-                  </h2>
-                  <h2
-                    class="fs-title-calc people-warning clr-neutral-700 display-none"
-                  >
+                  <h2 class="people-title fs-title-calc clr-neutral-500">Number of People</h2>
+                  <h2 class="fs-title-calc people-warning clr-neutral-700 display-none">
                     Can't be zero
                   </h2>
                 </div>
@@ -116,7 +79,7 @@
                   maxlength="15"
                   pattern="[0-9]"
                   placeholder="0"
-                  class="fs-input bg-img-person padding-inline-200"
+                  class="fs-input bg-img-person padding-inline-200 bg-clr-neutral-200 clr-neutral-600"
                 />
               </section>
             </div>
@@ -128,10 +91,7 @@
                     <h3 class="fs-subject clr-neutral-400">/ person</h3>
                   </div>
                   <div class="span-container">
-                    <span
-                      class="fs-total clr-primary-100 dollar-sign-tip currency-dollar"
-                      >$</span
-                    >
+                    <span class="fs-total clr-primary-100 dollar-sign-tip currency-dollar">$</span>
                     <p class="fs-total clr-primary-100" id="tip-person">0.00</p>
                   </div>
                 </section>
@@ -141,13 +101,10 @@
                     <h3 class="fs-subject clr-neutral-400">/ person</h3>
                   </div>
                   <div class="span-container">
-                    <span
-                      class="fs-total clr-primary-100 dollar-sign-total currency-dollar"
+                    <span class="fs-total clr-primary-100 dollar-sign-total currency-dollar"
                       >$</span
                     >
-                    <p class="fs-total clr-primary-100" id="total-person">
-                      0.00
-                    </p>
+                    <p class="fs-total clr-primary-100" id="total-person">0.00</p>
                   </div>
                 </section>
               </div>
@@ -157,9 +114,7 @@
                 <button id="euro">€</button>
               </div>
               <div class="reset-btn">
-                <button class="reset padding-block-100" id="reset-btn">
-                  Reset
-                </button>
+                <button class="reset padding-block-100" id="reset-btn">Reset</button>
               </div>
             </div>
           </div>

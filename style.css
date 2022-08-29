@@ -1,17 +1,18 @@
 :root {
   --clr-primary-100: hsl(172, 67%, 45%);
+  --clr-primary-200: hsl(172, 60%, 44%);
 
   --clr-neutral-100: hsl(0, 0%, 100%);
   --clr-neutral-200: hsl(189, 41%, 97%);
   --clr-neutral-300: hsl(185, 41%, 84%);
-  --clr-neutral-350: hsla(172, 67%, 45%, 0.466);
+  --clr-neutral-350: hsl(173, 59%, 78%);
   --clr-neutral-400: hsl(184, 14%, 56%);
   --clr-neutral-450: hsl(186, 42%, 75%);
   --clr-neutral-500: hsl(186, 14%, 43%);
   --clr-neutral-600: hsl(183, 100%, 15%);
   --clr-neutral-700: rgb(169, 97, 76);
 
-  --ff-primary: "Space Mono", monospace;
+  --ff-primary: 'Space Mono', monospace;
 
   --fs-100: 0.85rem;
   --fs-200: 0.9rem;
@@ -80,8 +81,8 @@
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
-ol[role="list"] {
+ul[role='list'],
+ol[role='list'] {
   list-style: none;
 }
 
@@ -143,7 +144,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 /* Firefox */
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield;
 }
 
@@ -163,8 +164,14 @@ input[type="number"] {
 .clr-neutral-300 {
   color: var(--clr-neutral-300);
 }
+.clr-neutral-350 {
+  color: var(--clr-neutral-350);
+}
 .clr-neutral-400 {
   color: var(--clr-neutral-400);
+}
+.clr-neutral-450 {
+  color: var(--clr-neutral-450);
 }
 .clr-neutral-500 {
   color: var(--clr-neutral-500);
@@ -190,8 +197,14 @@ input[type="number"] {
 .bg-clr-neutral-300 {
   background-color: var(--clr-neutral-300);
 }
+.bg-clr-neutral-350 {
+  background-color: var(--clr-neutral-350);
+}
 .bg-clr-neutral-400 {
   background-color: var(--clr-neutral-400);
+}
+.bg-clr-neutral-450 {
+  background-color: var(--clr-neutral-450);
 }
 .bg-clr-neutral-500 {
   background-color: var(--clr-neutral-500);
@@ -336,12 +349,15 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  row-gap: 4rem;
 
   --max-width: 1110px;
   /* --container-padding: 1.5rem; */
 
   width: min(var(--max-width), 100% - (var(--container-padding) * 2));
   margin-inline: auto;
+
+  /* padding-bottom: 4rem; */
 }
 
 @media (max-width: 50em) {
@@ -360,8 +376,8 @@ body {
 input {
   display: inline;
   border: none;
-  color: var(--clr-neutral-600);
-  background-color: var(--clr-neutral-200);
+  /* color: var(--clr-neutral-600); */
+  /* background-color: var(--clr-neutral-200); */
   cursor: pointer;
   /* width: 100%; */
 }
@@ -395,7 +411,7 @@ input {
 }
 
 .btn-tip:focus {
-  background-color: var(--clr-primary-100);
+  background-color: var(--clr-primary-200);
   color: var(--clr-neutral-600);
 }
 
@@ -621,6 +637,36 @@ input {
 
 /* Header */
 
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+  width: 100%;
+}
+
+.dark-mode-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 25%;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-title);
+  /* background-color: var(--clr-neutral-450);
+  color: var(--clr-neutral-300); */
+  border: none;
+  border-radius: 5px;
+  line-height: 2;
+  padding-inline: 0.75rem;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+/* .dark-mode-btn:hover {
+  background-color: var(--clr-neutral-300);
+  color: var(--clr-neutral-200);
+} */
+
 @media (max-width: 50em) {
   header {
     padding-block: 3rem;
@@ -629,12 +675,12 @@ input {
 
 @media (min-width: 50em) {
   header {
-    padding-bottom: 6rem;
+    /* padding-bottom: 4rem; */
   }
 }
 
 header img {
-  width: 90%;
+  max-width: 15%;
   height: auto;
 }
 
