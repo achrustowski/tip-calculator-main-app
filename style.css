@@ -352,7 +352,7 @@ body {
   row-gap: 4rem;
 
   --max-width: 1110px;
-  /* --container-padding: 1.5rem; */
+  --container-padding: 1.5rem;
 
   width: min(var(--max-width), 100% - (var(--container-padding) * 2));
   margin-inline: auto;
@@ -670,12 +670,6 @@ header {
 @media (max-width: 50em) {
   header {
     padding-block: 3rem;
-  }
-}
-
-@media (min-width: 50em) {
-  header {
-    /* padding-bottom: 4rem; */
   }
 }
 
