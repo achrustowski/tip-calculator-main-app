@@ -664,7 +664,7 @@ header {
 
 @media (max-width: 50em) {
   .dark-mode-btn {
-    max-width: 35%;
+    max-width: 50%;
   }
 }
 
